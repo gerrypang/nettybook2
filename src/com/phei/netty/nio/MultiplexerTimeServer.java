@@ -86,6 +86,7 @@ public class MultiplexerTimeServer implements Runnable {
 				SelectionKey key = null;
 				while (it.hasNext()) {
 					key = it.next();
+					// 删除处理过的 SelectionKey
 					it.remove();
 					try {
 						// 进行异步读写操作
